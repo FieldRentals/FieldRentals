@@ -1,0 +1,33 @@
+.container {
+    display: flex; 
+}
+
+.navHead {
+    font-weight: bold;
+    margin-top : 25px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.navText {
+    padding-left: 62%;
+}
+
+.navText button{
+    border: none;
+    background: none;
+    padding : 25px 10px;
+}
+
+.NavBarSign {
+    
+    
+}
+
+.NavBarSign button {
+    background-color: #323232;
+    color: beige;
+    padding: 10px 10px;
+    margin : 15px 0px; 
+    border-radius: 5px;
+}
