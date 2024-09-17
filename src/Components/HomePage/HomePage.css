@@ -1,0 +1,9 @@
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+.NBHS{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}

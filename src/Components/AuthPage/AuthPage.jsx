@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './AuthPage.css'
 import { Alert, Button, IconButton, InputAdornment, Snackbar, styled, TextField } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { StyledButton } from '../../App';
 
 const StyledTextField = styled(TextField)(() => ({
     '& .MuiOutlinedInput-root': {
@@ -22,14 +23,7 @@ const StyledTextField = styled(TextField)(() => ({
     },
 }));  
 
-const StyledButton = styled(Button)(() => ({
-    textTransform: 'none',
-    backgroundColor: '#323232',
-    borderRadius: '5px',
-    fontWeight: 600,
-    fontSize: '14px',
-    fontFamily: 'Poppins'
-}));
+
 
 const ErrorPopup = ({ open, onClose, message }) => {
     return (

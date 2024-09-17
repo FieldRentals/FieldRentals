@@ -1,0 +1,40 @@
+.AboutUs {
+    height: 380px;
+    display: flex;
+    justify-content: center;
+}
+
+.HSAbout {
+    padding: 40px 200px;
+    width: 980px;
+    height: 300px;
+    gap: 50px;
+    display: flex;
+    position: relative;
+}
+
+.HSAboutImage {
+    border-radius: 5px;
+}
+
+.HSAboutText {
+    
+    display: flex;
+    width: 560px;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.HSAboutTextTitle {
+    font-weight: var(--text-bold);
+    font-size: var(--text-big);
+    color: var(--primary-black);
+}
+
+.HSAboutText p {
+    margin: 0;
+    font-weight: var(--text-regular);
+    font-size: var(--text-small);
+}
+

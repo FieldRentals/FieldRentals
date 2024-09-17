@@ -1,0 +1,75 @@
+.HeroSectionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--primary-black);
+    padding : 0 40px;
+}
+
+.HSTitle{
+    font-size: var(--text-title);
+    font-weight: var(--text-bold);
+}
+
+.HSSubtitle{
+    font-size: var(--text-big);
+    font-weight: var(--text-regular);
+}
+
+.HeroSectionContainer button {
+    width: fit-content;
+}
+
+/* .HSSubtitle button{
+    background-color: #323232;
+    color: beige;
+    padding: 10px 10px;
+    margin : 15px 0px; 
+    border-radius: 5px;
+} */
+
+
+
+
+
+
+.OurCollection {
+    position: relative;
+    height: 1000px;
+    width: 100%;
+}
+
+.OurCollectionTitle {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.OurCollectionTitleBar {
+    top : 140px;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    margin-left: 15%;
+}
+
+
+.OurCollectionTitleBar button{
+    border: none;
+    background: none;
+    opacity: 50%;
+}
+
+.OurCollectionTitleBar .active {
+    border: none;
+    background: none;
+    opacity: 100%;
+}
+
