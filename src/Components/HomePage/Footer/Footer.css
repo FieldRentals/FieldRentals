@@ -1,40 +1,25 @@
-.FooterBox {
-    height: 156px;
-    background-color: var(--primary-black);
-    padding: 40px;
-    display: flex;
-    gap: 40px;
+.FooterContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  font-weight: var(--text-regular);
+  font-size: var(--text-small);
+  padding: 40px;
+  align-items: center;
 }
 
-.FooterContainer{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-radius: 0 0 20px 20px;
+.FooterContainerLogo {
+  font-weight: var(--text-bold);
+  font-size: var(--text-big);
 }
 
-.FooterConatinerTitle {
-    font-weight: var(--text-bold);
-    font-size: var(--text-big);
-    color: var(--primary-white);
+.FooterContainerLinks {
+  display: flex;
+  gap: 40px;
 }
 
-.FooterConatinerMid {
-    display: flex;
-    gap:40px;
-}
-
-.FooterContainerMidText {
-    font-weight: var(--text-regular);
-    font-size: var(--text-small);
-    color: var(--primary-white);
-}
-
-.FooterConatinerIcons{
-    display: flex;
-    gap: 10px;
-    flex-direction: row;
-    color: var(--primary-white);
+.FooterContainerIcons {
+  display: flex;
+  gap: 20px;
 }

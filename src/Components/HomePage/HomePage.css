@@ -2,8 +2,14 @@
     display: none;
 } */
 
-.NBHS{
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
+.NBHS {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-image: url("../../../src/images/NBHSBG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
