@@ -26,7 +26,7 @@
   font-weight: var(--text-bold);
 }
 
-.PersonalInformationSubContainerCard {
+.AddEquipmentSubContainerInputCard {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -34,12 +34,12 @@
   font-weight: var(--text-bold);
 }
 
-.PersonalInformationSubContainerCardLabel {
+.AddEquipmentSubContainerInputCardLabel {
   flex: 1;
   min-width: 150px;
 }
 
-.PersonalInformationSubContainerCardInput {
+.AddEquipmentSubContainerCardInput {
   flex: 2;
   flex-basis: 0;
   font-size: var(--text-small);
