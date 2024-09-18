@@ -14,7 +14,9 @@ function NavBar() {
 
   return (
     <div className="NavBarContainer">
-      <div className="NavBarHead">FieldRentals</div>
+      <div className="NavBarHead" onClick={() => navigate("/")}>
+        FieldRentals
+      </div>
       <div className="NavBarButtonContainer">
         <div className="NavBarLinks">
           <a href="#Home">Home</a>
