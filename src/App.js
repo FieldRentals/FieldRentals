@@ -14,6 +14,11 @@ import { AuthProvider, useAuth } from "./AuthContext";
 import { useContext } from "react";
 import { signOutUser } from "./Firebase/authFunction";
 import Dashboard from "./Components/DashBoard/Dashboard";
+// import TermsPage from "../../testing/src/TermsPage";
+import Terms from "./Components/HomePage/Footer/AllLinks/Terms";
+import PrivacyPolicy from "./Components/HomePage/Footer/AllLinks/PrivacyPolicy";
+import LN from "./Components/HomePage/Footer/AllLinks/LN";
+import Accesibility from "./Components/HomePage/Footer/AllLinks/Accesibility";
 
 export const StyledButton = styled(Button)(() => ({
   textTransform: "none",
@@ -85,6 +90,10 @@ function App() {
               </PrivateRouteWithSignIn>
             }
           />
+          <Route path="/terms" element={<Terms/>} />
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
+          <Route path="/LN" element={<LN/>} />
+          <Route path="/Accesibility" element={<Accesibility/>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -38,21 +38,21 @@ export default function OurServices() {
       </div>
       <div className="OurServicesRow">
         <Card
-          title={"Equipment Rental"}
+          title={"Rental History"}
           content={
-            "Access a diverse fleet of high-quality farm machinery for rent, including tractors, combines, plows, and more. Our equipment is well-maintained and ready to handle your agricultural needs."
+            "Rental history is a record of a tenant's previous rental experiences, including payment habits and references. It's used by landlords to assess the reliability of potential tenants."
           }
         />
         <Card
-          title={"Custom Rental Solutions"}
+          title={"Weather Forecast"}
           content={
-            "Tailored rental solutions to meet your specific needs. Whether you require specialized equipment or a unique rental arrangement, we’re here to accommodate."
+            "Weather forecasts predict future atmospheric conditions like temperature, precipitation, and wind. They help people plan activities and prepare for changing weather."
           }
         />
         <Card
-          title={"Seasonal Promotions"}
+          title={"Crop Management"}
           content={
-            "Special offers and discounts on equipment rentals during peak seasons or for long-term rentals."
+            "Crop management involves optimizing planting, irrigation, and pest control to enhance crop growth and yield. It ensures sustainable farming by efficiently using resources and minimizing losses."
           }
         />
       </div>
