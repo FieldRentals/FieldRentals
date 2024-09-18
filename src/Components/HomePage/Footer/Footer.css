@@ -23,3 +23,11 @@
   display: flex;
   gap: 20px;
 }
+.FooterLinkText{
+  text-decoration: none;
+  color: var(--primary-white);
+}
+.FooterContainerIcons a{
+  text-decoration: none;
+  color: var(--primary-white);
+}
