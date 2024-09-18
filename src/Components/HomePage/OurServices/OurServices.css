@@ -1,117 +1,43 @@
-.OurServices{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 100px;
-    gap: 50px;
-}
-
-.OurServicesTitle {
-    font-weight: var(--text-bold);
-    font-size: var(--text-big);
-}
-
-.OurServicesContent {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 40px;
-
-}
-
-.OurServicesContentE , .OurServicesContentC, .OurServicesContentS {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-radius: 5px;
-    border: 2px solid var(--primary-black);
-    width: 300px;
-    height: 300px;
-}
-
-.OurServicesContentE img, .OurServicesContentC img, .OurServicesContentS img {
-    width: fit-content;
-}
-
-p,h3 {
-    margin: 0;
-}
-
-.OurServicesContentSubTitle {
-    font-size: var(--text-big);
-    font-weight: var(--text-bold);
-}
-
-/* 
 .OurServices {
-    clear: left;
-    height: 400px;
-    width: 100%;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  padding: 40px 0px;
 }
 
 .OurServicesTitle {
-    height: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
 }
 
-.OurServicesContent {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    
-    width: 100%;
-    padding: 50px;
-
+.OurServicesRow {
+  width: var(--width);
+  display: flex;
+  align-items: space-between;
+  gap: 50px;
 }
 
-.OurServicesContent::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-.OurServicesContentE{
-    position: relative;
-    border: 2px solid black;
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
+.OurServicesCard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
 }
 
-.OurServicesContentC{
-    position: relative;
-    border: 2px solid black;
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
+.OurServicesCard img {
+  width: fit-content;
 }
 
-.OurServicesContentS{
-    position: relative;
-    border: 2px solid black;
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
+.OurServicesCardTitle {
+  font-size: var(--text-medium);
+  font-weight: var(--text-bold);
 }
-
-.OurServicesContent img {
-    position: absolute;
-    top: 10px;
-    left: 10px
-}
-
-.OurServicesContent h3 {
-    position: absolute;
-    top: 50px;
-    left: 15px;
-}
-
-.OurServicesContent p {
-    position: absolute;
-    top : 95px;
-    left : 15px;
-    width: 275px;
-} */

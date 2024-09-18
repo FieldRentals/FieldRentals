@@ -1,40 +1,28 @@
-.AboutUs {
-    height: 380px;
-    display: flex;
-    justify-content: center;
+.AboutUsContainer {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0px;
 }
 
-.HSAbout {
-    padding: 40px 200px;
-    width: 980px;
-    height: 300px;
-    gap: 50px;
-    display: flex;
-    position: relative;
+.AboutUsSubContainer {
+  width: var(--width);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
 }
 
-.HSAboutImage {
-    border-radius: 5px;
+.AboutUsSubContainerTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--primary-black);
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
 }
 
-.HSAboutText {
-    
-    display: flex;
-    width: 560px;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
+.AboutUsSubContainerTextTitle {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
 }
-
-.HSAboutTextTitle {
-    font-weight: var(--text-bold);
-    font-size: var(--text-big);
-    color: var(--primary-black);
-}
-
-.HSAboutText p {
-    margin: 0;
-    font-weight: var(--text-regular);
-    font-size: var(--text-small);
-}
-

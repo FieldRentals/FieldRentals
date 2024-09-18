@@ -1,32 +1,35 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Footer from './Footer/Footer';
-import Profile from './Profile/Profile';
-import HeroSection from './HeroSection/HeroSection';
-import './HomePage.css'
-import AboutUs from './AboutUs/AboutUs';
-import SearchBox from './SearchBox/SearchBox'
-import OurServices from './OurServices/OurServices';
-import NavBar from './NavBar/NavBar';
-// import './App.css';
-// import HeroSection from './components/HeroSection.js';
-// import NavBar from './components/NavBar.js'
-// import Profile from './components/Profile.js';
+import Footer from "./Footer/Footer";
+import Profile from "../Profile/Profile";
+import HeroSection from "./HeroSection/HeroSection";
+import "./HomePage.css";
+import AboutUs from "./AboutUs/AboutUs";
+import SearchBox from "./SearchBox/SearchBox";
+import OurServices from "./OurServices/OurServices";
+import NavBar from "../NavBar/NavBar";
 
 function HomePage() {
-  const [showProfile, setShowProfile] = useState(false)
+  const [showProfile, setShowProfile] = useState(false);
 
   return (
     <div className="HomePage">
-      <div className='NBHS'>
-      <NavBar setShowProfile={setShowProfile}/>
-      {showProfile ? <Profile setShowProfile={setShowProfile}/> : null}
-      <HeroSection/>
+      <div className="NBHS">
+        {/* <NavBar setShowProfile={setShowProfile}/>
+      {showProfile ? <Profile setShowProfile={setShowProfile}/> : null} */}
+        <NavBar />
+        <section id="Home">
+          <HeroSection />
+        </section>
       </div>
-      <SearchBox />
-      <AboutUs/>
-      <OurServices/>
-      <Footer/>
+      {/* <SearchBox /> */}
+      <section id="AboutUs">
+        <AboutUs />
+      </section>
+      <section id="OurServices">
+        <OurServices />
+      </section>
+      <Footer />
     </div>
   );
 }

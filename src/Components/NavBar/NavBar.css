@@ -1,0 +1,34 @@
+.NavBarContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+  color: var(--primary-black);
+}
+
+.NavBarButtonContainer {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.NavBarLinks {
+  display: flex;
+  gap: 40px;
+}
+
+.NavBarLinks a {
+  border: none;
+  background: none;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+  text-decoration: none;
+}
+
+.NavBarSign {
+  display: flex;
+  align-items: center;
+  /* cursor: pointer; */
+}
