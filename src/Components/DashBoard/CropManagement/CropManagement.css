@@ -1,0 +1,79 @@
+.CropManagement {
+  color: var(--primary-black);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.CropManagementTitle {
+  font-weight: var(--text-bold);
+  font-size: var(--text-big);
+}
+
+.CropManagementContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: var(--width);
+}
+
+.CropManagementSubContainer {
+  /* width: var(--width); */
+}
+
+.CropManagementSubContainerTitle {
+  font-weight: var(--text-bold);
+  font-size: var(--text-big);
+  padding-bottom: 10px;
+}
+
+.CropManagementSubContainerBox {
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.CropManagementSubContainerBox h3,
+.CropManagementSubContainerBox p,
+.CropManagementSubContainerBox strong,
+.CropManagementSubContainerBox ol {
+  margin: 0;
+}
+
+.CropManagementGrowthT {
+  display: flex;
+  flex-direction: column;
+  width: var(--width);
+  gap: 20px;
+}
+
+.CropManagementGrowthTTitle {
+  font-weight: var(--text-bold);
+  font-size: var(--text-big);
+  padding-bottom: 10px;
+}
+
+.CropManagementGrowthTBox {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.CropManagementGrowthTBoxName {
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  align-items: center;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: var(--text-regular);
+  font-size: var(--text-small);
+  gap: 20px;
+}

@@ -13,6 +13,7 @@ import { styled, Button, TextField } from "@mui/material";
 import { AuthProvider, useAuth } from "./AuthContext";
 import { useContext } from "react";
 import { signOutUser } from "./Firebase/authFunction";
+import Dashboard from "./Components/DashBoard/Dashboard";
 
 export const StyledButton = styled(Button)(() => ({
   textTransform: "none",
@@ -80,9 +81,7 @@ function App() {
             path="/dashboard"
             element={
               <PrivateRouteWithSignIn>
-                <div>
-                  Temp <button onClick={() => signOutUser()}>Sign Out</button>
-                </div>
+                <Dashboard />
               </PrivateRouteWithSignIn>
             }
           />
