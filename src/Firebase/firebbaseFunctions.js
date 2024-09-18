@@ -1,4 +1,4 @@
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, query, setDoc } from "firebase/firestore";
 import { db } from "./firebase";
 
 export async function createInitalUser(user) {
@@ -35,3 +35,16 @@ export async function updateUserData(uid, data) {
     console.error("Error updating document:", error);
   }
 }
+
+export async function getEquipmentData() {
+  const q = query(collection(db, "equipments"));
+  const querySnapshot = await getDocs(q);
+  
+  const equipmentData = [];
+  querySnapshot.forEach((doc) => {
+      equipmentData.push(doc.data());
+  });
+  
+  return equipmentData;
+}
+

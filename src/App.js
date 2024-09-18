@@ -15,6 +15,7 @@ import { useContext } from "react";
 import { signOutUser } from "./Firebase/authFunction";
 import Dashboard from "./Components/DashBoard/Dashboard";
 
+
 export const StyledButton = styled(Button)(() => ({
   textTransform: "none",
   backgroundColor: "#323232",
@@ -88,6 +89,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </AuthProvider>
+    
   );
 }
 
