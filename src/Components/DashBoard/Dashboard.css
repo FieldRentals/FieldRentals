@@ -1,0 +1,20 @@
+.DashboardButtonContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.DashboardButtonSubContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  width: calc(var(--width) - 80px);
+  padding: 40px 20px;
+
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+}
+
+.DashboardButtonSubContainer button {
+  width: fit-content;
+}
