@@ -23,7 +23,8 @@ function NavBar() {
           <a href="#AboutUs">About Us</a>
           <a href="#OurServices">Service</a>
           {/* <a href="#Collection">Collection</a> */}
-          {currentUser ? <a href="/dashboard">Dashboard</a> : null}
+          {/* {currentUser ? <a href="/dashboard">Dashboard</a> : null} */}
+          {currentUser ? <div onClick={() => navigate("/dashboard")}>Dashboard</div>
         </div>
         <div className="NavBarSign">
           {currentUser ? (
