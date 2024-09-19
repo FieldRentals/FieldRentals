@@ -27,6 +27,15 @@
   text-decoration: none;
 }
 
+.NavBarLinks div {
+  border: none;
+  background: none;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+  text-decoration: none;
+}
+
 .NavBarSign {
   display: flex;
   align-items: center;

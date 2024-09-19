@@ -19,6 +19,7 @@ import Terms from "./Components/HomePage/Footer/AllLinks/Terms";
 import PrivacyPolicy from "./Components/HomePage/Footer/AllLinks/PrivacyPolicy";
 import LN from "./Components/HomePage/Footer/AllLinks/LN";
 import Accesibility from "./Components/HomePage/Footer/AllLinks/Accesibility";
+import HomePageAfterLogIn from "./Components/HomePageAfterLogIn/HomePageAfterLogIn";
 
 export const StyledButton = styled(Button)(() => ({
   textTransform: "none",
@@ -68,12 +69,22 @@ function PrivateRouteWithoutSignIn({ children }) {
   return currentUser ? <Navigate to="/" /> : children;
 }
 
+function HomePagePath() {
+  const { currentUser, loading } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return currentUser ? <HomePageAfterLogIn /> : <HomePage />;
+}
+
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePagePath />} />
           <Route
             path="/login-or-register"
             element={
@@ -83,7 +94,7 @@ function App() {
             }
           />
           <Route
-            path="/dashboard"
+            path="/our-services"
             element={
               <PrivateRouteWithSignIn>
                 <Dashboard />
