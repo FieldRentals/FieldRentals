@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { getEquipmentData } from "../../../Firebase/firebbaseFunctions";
-import "./OurCollection.css"; // Make sure to import the CSS file
+import "./OurCollection.css";
 import { StyledButton } from "../../../App";
+import OurCollectionModal from "./OurCollectionModal/OurCollectionModal";
 
 export default function OurCollection() {
   const [equipments, setEquipments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedEquipment, setSelectedEquipment] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +29,17 @@ export default function OurCollection() {
   const handleRetry = () => {
     setLoading(true);
     setError(null);
-    // fetchData(); // Ensure fetchData is defined properly for re-use
+    // fetchData();
+  };
+
+  const handleBookClick = (equipment) => {
+    setSelectedEquipment(equipment);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedEquipment(null);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -68,6 +81,7 @@ export default function OurCollection() {
                 disableElevation
                 disableFocusRipple
                 disableRipple
+                onClick={() => handleBookClick(equipment)}
               >
                 Book Now
               </StyledButton>
@@ -75,6 +89,11 @@ export default function OurCollection() {
           </div>
         ))}
       </div>
+      <OurCollectionModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        equipment={selectedEquipment}
+      />
     </div>
   );
 }

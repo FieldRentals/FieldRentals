@@ -1,0 +1,80 @@
+/* Modal.css */
+.OurCollectionModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.OurCollectionModalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-black);
+  opacity: 50%;
+}
+
+.OurCollectionModalContent {
+  background-color: var(--primary-white);
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: var(--width);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.OurCollectionModalContainer {
+  display: flex;
+  gap: 20px;
+  color: var(--primary-black);
+}
+
+.OurCollectionModalImageContainer {
+  grid-area: OurCollectionModalImageContainer;
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.OurCollectionModalImageContainer {
+  width: 200px;
+  height: 200px;
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.OurCollectionModalImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.OurCollectionModalContentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.OurCollectionModalTitle {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+}
