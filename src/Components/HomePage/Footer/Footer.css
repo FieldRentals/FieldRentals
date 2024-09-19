@@ -1,0 +1,33 @@
+.FooterContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  font-weight: var(--text-regular);
+  font-size: var(--text-small);
+  padding: 40px;
+  align-items: center;
+}
+
+.FooterContainerLogo {
+  font-weight: var(--text-bold);
+  font-size: var(--text-big);
+}
+
+.FooterContainerLinks {
+  display: flex;
+  gap: 40px;
+}
+
+.FooterContainerIcons {
+  display: flex;
+  gap: 20px;
+}
+.FooterLinkText{
+  text-decoration: none;
+  color: var(--primary-white);
+}
+.FooterContainerIcons a{
+  text-decoration: none;
+  color: var(--primary-white);
+}

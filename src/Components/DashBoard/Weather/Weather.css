@@ -1,0 +1,143 @@
+.WeatherContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: var(--primary-black);
+}
+
+.WeatherContainerTitle {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+  padding-bottom: 20px;
+}
+
+.TodaysWeatherContainer {
+  display: flex;
+  flex-direction: column;
+  width: calc(var(--width) - 80px);
+  padding: 20px;
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+}
+
+.TodaysWeatherSubContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.TodayWeatherSubContainerInput {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.TodayWeatherSubContainerInput input {
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid var(--primary-black);
+  border-radius: 5px;
+}
+
+.WeatherDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.WeatherInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.WeatherInfo p {
+  margin: 0;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.WeatherInfo p:first-of-type {
+  font-size: var(--text-medium);
+  font-weight: var(--text-bold);
+}
+
+.TemperatureInfo {
+  text-align: right;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.TemperatureInfoText {
+  font-size: 36px;
+  font-weight: var(--text-bold);
+}
+
+.TemperatureInfo img {
+  width: 96px;
+}
+
+.WeeksWeather {
+  width: var(--width);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ForecastCardsContainer {
+  width: 100%;
+  padding: 20px;
+}
+
+.ForecastCardsContainerTitle {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+  padding-bottom: 20px;
+}
+
+.ForecastCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates two equal columns */
+  gap: 20px;
+}
+
+.ForecastCard {
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+/* 
+.ForecastCardHeader {
+  font-size: 18px;
+  font-weight: bold;
+} */
+
+/* .ForecastCardBody {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .ForecastCardLeft,
+.ForecastCardRight {
+  display: flex;
+  flex-direction: column;
+} */
+
+.ForecastDetails {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ForecastColumn p {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

@@ -1,0 +1,51 @@
+.PersonalInformationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 40px;
+
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.PersonalInformationSubContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.PersonalInformationSubContainerTitle {
+  font-size: var(--text-medium);
+  font-weight: var(--text-bold);
+}
+
+.PersonalInformationSubContainerTextFieldContainer {
+  display: flex;
+  align-items: center;
+  font-size: var(--text-small);
+  font-weight: var(--text-bold);
+}
+
+.AddEquipmentSubContainerInputCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--text-small);
+  font-weight: var(--text-bold);
+}
+
+.AddEquipmentSubContainerInputCardLabel {
+  flex: 1;
+  min-width: 150px;
+}
+
+.AddEquipmentSubContainerCardInput {
+  flex: 2;
+  flex-basis: 0;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid var(--primary-black);
+  border-radius: 5px;
+}

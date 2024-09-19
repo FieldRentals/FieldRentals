@@ -1,0 +1,171 @@
+.AuthPageContainer {
+    background-color: var(--primary-background-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.AuthPageSubContainer {
+    background-color: var(--primary-white);
+    border-radius: var(--border-radius-outer);
+    position: relative;
+    overflow: hidden;
+    width: 60%;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.AuthPageSubContainer form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.AuthPageSubContainerFormContainer {
+    position: absolute;
+    top: 0;
+    width: calc(50% - 80px);
+    height: calc(100% - 80px);
+    transition: all 1s ease-in-out;
+
+    padding: 40px;
+}
+
+.AuthPageSubContainerFormContainer form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    font-size: var(--text-big);
+    font-weight: var(--text-bold);
+    color: var(--primary-black);
+}
+
+.AuthPageSubContainerFormContainer.SignIn {
+    left: 0;
+    /* width: 50%; */
+}
+
+.AuthPageSubContainer.SignUpActive .AuthPageSubContainerFormContainer.SignIn {
+    transform: translateX(-200%);
+}
+
+.AuthPageSubContainerFormContainer.SignUp {
+    right: 0%;
+    /* width: 50%; */
+    transform: translateX(200%);
+}
+
+.AuthPageSubContainer.SignUpActive .AuthPageSubContainerFormContainer.SignUp {
+    transform: translateX(0%);
+
+}
+
+.AuthPageSubContainerToggleContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+    border-radius: var(--border-radius-outer);
+    z-index: 1000;
+
+    background: var(--primary-blue-linear-gradient-90);
+}
+
+.AuthPageSubContainer.SignUpActive .AuthPageSubContainerToggleContainer{
+    transform: translateX(-100%);
+    border-radius: var(--border-radius-outer);
+}
+
+.AuthPageSubContainerTogglePanel {
+    position: absolute;
+    width: calc(50% - 80px);
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    transform: translateX(0);
+    transition: all .6s ease-in-out;
+
+    padding: 40px;
+
+    color: var(--primary-color);
+
+    font-size: var(--text-small);
+    font-weight: var(--text-regular);
+}
+
+.AuthPageSubContainerTogglePanel div span {
+    font-weight: var(--text-bold);
+}
+
+.AuthPageSubContainerTogglePanel .Title {
+    font-size: var(--text-big);
+    font-weight: var(--text-bold);
+}
+
+.AuthPageSubContainerToggleSignUp {
+    right: 0;
+}
+
+.AuthPageSubContainerToggleSignIn {
+    left: 0;
+}
+
+.AuthPageSubContainerFormContainerText {
+    font-size: var(--text-small);
+    font-weight: var(--text-regular);
+    display: none;
+}
+
+.AuthPageSubContainerFormContainerText span {
+    font-weight: var(--text-bold);
+}
+
+@media only screen and (max-width: 1200px) {
+    .AuthPageSubContainer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .AuthPageSubContainer {
+        width: 80%;
+        /* background: var(--primary-blue-linear-gradient-90); */
+    }
+
+    .AuthPageSubContainerToggleContainer {
+        display: none;
+    }
+    
+    .AuthPageSubContainer.SignUpActive .AuthPageSubContainerFormContainer.SignIn {
+        transform: translateX(-100%);
+    }
+    
+    .AuthPageSubContainerFormContainer.SignUp {
+        transform: translateX(100%);
+    }
+    
+    .AuthPageSubContainerFormContainer.SignUp, .AuthPageSubContainerFormContainer.SignIn {
+        width: calc(100% - 80px);
+        /* background-color: var(--primary-white); */
+        background: var(--primary-blue-linear-gradient-0);
+        z-index: 2000;
+    }
+
+    .AuthPageSubContainerFormContainerText {
+        display: flex;
+    }
+}

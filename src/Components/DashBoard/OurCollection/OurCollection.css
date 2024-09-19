@@ -1,0 +1,57 @@
+.OurCollectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.OurCollectionTitle {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+}
+
+.OurCollectionSubContainer {
+  width: calc(var(--width));
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates two equal columns */
+  gap: 40px;
+}
+
+.OurCollectionCardContainer {
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+}
+
+.OurCollectionCardTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+}
+
+.OurCollectionCardImageContainer {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.OurCollectionCardImage {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.OurCollectionCardTextEquipmentName {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+}
+
+.OurCollectionCardTextContainer button {
+  width: fit-content;
+}

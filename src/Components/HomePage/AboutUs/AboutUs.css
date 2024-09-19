@@ -1,0 +1,28 @@
+.AboutUsContainer {
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-around;
+  padding: 40px 0px;
+}
+
+.AboutUsSubContainer {
+  width: var(--width);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.AboutUsSubContainerTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--primary-black);
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+}
+
+.AboutUsSubContainerTextTitle {
+  font-size: var(--text-big);
+  font-weight: var(--text-bold);
+}
