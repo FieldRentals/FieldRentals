@@ -1,0 +1,11 @@
+.AccountSettings {
+  padding: 20px 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.AccountSettingsTitle {
+  font-size: var(--text-medium);
+  font-weight: var(--text-bold);
+}

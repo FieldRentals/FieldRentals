@@ -43,7 +43,7 @@ function NavBar() {
               disableRipple
               onClick={() => navigate("/login-or-register")}
             >
-              Sign Up / Log In
+              Log In
             </StyledButton>
           )}
 

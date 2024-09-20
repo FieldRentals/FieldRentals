@@ -25,3 +25,9 @@
   --text-bold: 600;
   --width: 70%;
 }
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --width: 90%;
+  }
+}

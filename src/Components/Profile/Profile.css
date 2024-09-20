@@ -30,6 +30,8 @@
   color: var(--primary-black);
   border-radius: 10px;
   position: relative;
+  height: 600px;
+  overflow: hidden; /* Prevent content overflow */
 }
 
 .ProfileSubContainerSideBar {
@@ -82,7 +84,11 @@
 }
 
 .ProfileSubConatinerMainInfo {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  height: 100%;
+  overflow-y: auto; /* Enable scrolling for the main content */
 }
 
 .ProfileSubConatinerMainInfoTitle {
@@ -90,4 +96,26 @@
   font-weight: var(--text-bold);
   padding: 20px 40px;
   border-bottom: 2px var(--primary-black) solid;
+}
+
+@media screen and (max-width: 1000px) {
+  .ProfileSubContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ProfileSubContainerSideBar {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-bottom: 2px var(--primary-black) solid;
+    gap: 5px;
+    height: 20%;
+    overflow-y: auto;
+  }
+
+  .ProfileSubContainerSideBarTitle {
+    width: calc(100%);
+  }
 }

@@ -1,0 +1,34 @@
+.SoilAnalysisContainer {
+  width: calc(var(--width) - 120px);
+  padding: 40px;
+  margin: auto;
+  text-align: center;
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  color: var(--primary-black);
+  margin-bottom: 40px;
+}
+
+.SoilAnalysisContainerTitle {
+  font-weight: var(--text-bold);
+  font-size: var(--text-big);
+}
+
+.SoilAnalysisFormLabel {
+  font-weight: var(--text-bold);
+  font-size: var(--text-small);
+  display: flex;
+  width: 100%;
+}
+
+.SoilAnalysisContainer input,
+select {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  background: none;
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+}

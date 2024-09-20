@@ -1,0 +1,24 @@
+.SupportAndHelpContainer {
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.SupportAndHelpCard {
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .SupportAndHelpCard {
+    display: flex;
+    flex-direction: column;
+  }
+}

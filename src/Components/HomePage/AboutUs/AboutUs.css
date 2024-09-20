@@ -26,3 +26,10 @@
   font-size: var(--text-big);
   font-weight: var(--text-bold);
 }
+
+@media screen and (max-width: 1000px) {
+  .AboutUsSubContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}

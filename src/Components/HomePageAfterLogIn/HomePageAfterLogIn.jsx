@@ -3,6 +3,8 @@ import NavBar from "../NavBar/NavBar";
 import { StyledButton } from "../../App";
 import OurCollection from "../DashBoard/OurCollection/OurCollection";
 import AddEquipment from "../DashBoard/AddEuipment/AddEquipment";
+import "./HomePageAfterLogin.css";
+import Footer from "../HomePage/Footer/Footer";
 
 export default function HomePageAfterLogIn() {
   const [addEquipment, setAddEquipment] = useState(false);
@@ -10,8 +12,9 @@ export default function HomePageAfterLogIn() {
   return (
     <div>
       <NavBar />
-      <div className="DashboardButtonContainer">
-        <div className="DashboardButtonSubContainer">
+      <OurCollection />
+      <div className="HomePageAfterLoginButtonContainer">
+        <div className="HomePageAfterLoginButtonSubContainer">
           <div>
             Ready to earn extra income? Click here to add your equipment for
             rent!
@@ -28,7 +31,7 @@ export default function HomePageAfterLogIn() {
           </StyledButton>
         </div>
       </div>
-      <OurCollection />
+      {/* <Footer /> */}
     </div>
   );
 }

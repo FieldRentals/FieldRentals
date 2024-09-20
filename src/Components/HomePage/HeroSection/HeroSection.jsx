@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import "./HeroSection.css";
 import { StyledButton } from "../../../App";
+import { useNavigate } from "react-router-dom";
 
 function HeroSection() {
   const [activeButton, setActiveButton] = useState("Popular");
   // const [activeLine,setActiveLine] = useState('')
+  const navaigate = useNavigate();
+
   return (
     <div className="HeroSectionContainer" id="Home">
       <div className="HSTitle">
@@ -19,8 +22,9 @@ function HeroSection() {
         disableElevation
         disableFocusRipple
         disableRipple
+        onClick={() => navaigate("/login-or-register")}
       >
-        See all Equipments
+        Get Started
       </StyledButton>
     </div>
 

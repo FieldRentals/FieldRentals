@@ -21,17 +21,23 @@
   z-index: 20;
 }
 
-.AddEquipmentSubContainer {
+.AddEquipmentParentContainer {
   background-color: var(--primary-background-grey);
   border: 2px solid var(--primary-black);
-  border-radius: 5px;
-  width: calc(var(--width) - 80px);
+  width: calc(var(--width) * 0.75);
   padding: 40px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 25;
+}
+
+.AddEquipmentSubContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 20px 20px;
-  z-index: 25;
   grid-auto-flow: row;
   grid-template-areas:
     "AddEquipmentSubContainerImageContainer AddEquipmentSubContainerNameContainer AddEquipmentSubContainerNameContainer"
@@ -65,30 +71,6 @@
   grid-area: AddEquipmentSubContainerPriceContainer;
 }
 
-.PersonalInformationSubContainerCard {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: var(--text-small);
-  font-weight: var(--text-bold);
-}
-
-.PersonalInformationSubContainerCardLabel {
-  flex: 1;
-  min-width: 150px;
-}
-
-.PersonalInformationSubContainerCardInput {
-  flex: 2;
-  flex-basis: 0;
-  font-size: var(--text-small);
-  font-weight: var(--text-regular);
-  padding: 10px 20px;
-  background: none;
-  border: 1px solid var(--primary-black);
-  border-radius: 5px;
-}
-
 .AddEquipmentSubContainerImageContainer {
   display: flex;
   flex-direction: column;
@@ -106,4 +88,33 @@
   margin-top: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.AddEquipmentCloseButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.AddEquipmentCloseButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-black);
+}
+
+@media screen and (max-width: 1000px) {
+  .AddEquipmentSubContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .AddEquipmentSubContainerInputCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .AddEquipmentSubContainerInputCard input {
+    width: calc(100% - 40px);
+  }
 }

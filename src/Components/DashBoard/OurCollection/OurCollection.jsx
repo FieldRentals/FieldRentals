@@ -3,6 +3,7 @@ import { getEquipmentData } from "../../../Firebase/firebbaseFunctions";
 import "./OurCollection.css";
 import { StyledButton } from "../../../App";
 import OurCollectionModal from "./OurCollectionModal/OurCollectionModal";
+import Loading from "../../Loading/Loading";
 
 export default function OurCollection() {
   const [equipments, setEquipments] = useState([]);
@@ -10,6 +11,9 @@ export default function OurCollection() {
   const [error, setError] = useState(null);
   const [selectedEquipment, setSelectedEquipment] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,7 +46,25 @@ export default function OurCollection() {
     setSelectedEquipment(null);
   };
 
-  if (loading) return <p>Loading...</p>;
+  const totalPages = Math.ceil(equipments.length / itemsPerPage);
+  const currentItems = equipments.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prev) => prev + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prev) => prev - 1);
+    }
+  };
+
+  if (loading) return <Loading />;
   if (error)
     return (
       <div>
@@ -55,8 +77,8 @@ export default function OurCollection() {
     <div className="OurCollectionContainer">
       <div className="OurCollectionTitle">Our Collection</div>
       <div className="OurCollectionSubContainer">
-        {equipments.map((equipment) => (
-          <div className="OurCollectionCardContainer" key={equipment.id}>
+        {currentItems.map((equipment, i) => (
+          <div className="OurCollectionCardContainer" key={i}>
             <div className="OurCollectionCardImageContainer">
               <img
                 className="OurCollectionCardImage"
@@ -88,6 +110,30 @@ export default function OurCollection() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="OurCollectionContainerPaginationContainer">
+        <StyledButton
+          variant="contained"
+          disableElevation
+          disableFocusRipple
+          disableRipple
+          onClick={prevPage}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </StyledButton>
+
+        <span>{` Page ${currentPage} of ${totalPages} `}</span>
+        <StyledButton
+          variant="contained"
+          disableElevation
+          disableFocusRipple
+          disableRipple
+          onClick={nextPage}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </StyledButton>
       </div>
       <OurCollectionModal
         isOpen={isModalOpen}

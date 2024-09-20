@@ -87,7 +87,7 @@
 .WeeksWeather {
   width: var(--width);
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .ForecastCardsContainer {
@@ -140,4 +140,25 @@
   display: flex;
   gap: 10px;
   align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .TodayWeatherSubContainerInput {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .WeatherDetails {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .TemperatureInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ForecastCards {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }

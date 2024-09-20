@@ -1,0 +1,51 @@
+.EquipmentInventoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 40px;
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.EquipmentInventoryContainerTitle {
+  font-size: var(--text-medium);
+  font-weight: var(--text-bold);
+}
+
+.EquipmentInventoryCard {
+  border: 2px solid var(--primary-black);
+  border-radius: 5px;
+  display: flex;
+  gap: 10px;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+}
+
+.EquipmentInventoryCardImageContainer {
+  width: 50%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+}
+
+.EquipmentInventoryCardTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  font-size: var(--text-small);
+  font-weight: var(--text-regular);
+  color: var(--primary-black);
+}
+
+@media screen and (max-width: 1000px) {
+  .EquipmentInventoryCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .EquipmentInventoryCard img {
+    width: 100%;
+  }
+}

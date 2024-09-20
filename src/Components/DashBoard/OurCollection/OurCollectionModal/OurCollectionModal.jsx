@@ -1,8 +1,9 @@
-// Modal.js
 import React, { useState, useEffect } from "react";
 import "./OurCollectionModal.css"; // Add your CSS for styling
 import { StyledButton } from "../../../../App";
 import { Alert, Snackbar } from "@mui/material";
+import { bookEquipment } from "../../../../Firebase/firebbaseFunctions";
+import { useAuth } from "../../../../AuthContext";
 
 const ErrorPopup = ({ open, onClose, message }) => {
   return (
@@ -29,13 +30,28 @@ const OurCollectionModal = ({ isOpen, onClose, equipment }) => {
   const [dropOffDate, setDropOffDate] = useState("");
   const [errorOpen, setErrorOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Loading state
+
+  const { currentUser } = useAuth();
+
+  // Reset state when equipment changes
+  useEffect(() => {
+    if (equipment) {
+      setPickupDate("");
+      setNumberOfDays(1);
+      setDropOffDate("");
+    }
+  }, [equipment]);
 
   useEffect(() => {
     if (pickupDate && numberOfDays > 0) {
       const pickDate = new Date(pickupDate);
       const dropDate = new Date(pickDate);
-      dropDate.setDate(pickDate.getDate() + numberOfDays);
-      //   setDropOffDate(formatDate(dropDate)); // Use the formatDate function
+      dropDate.setDate(pickDate.getDate() + parseInt(numberOfDays));
+      const day = String(dropDate.getDate());
+      const month = String(dropDate.getMonth() + 1);
+      const year = dropDate.getFullYear();
+      setDropOffDate(`${day}/${month}/${year}`);
     } else {
       setDropOffDate("");
     }
@@ -43,24 +59,53 @@ const OurCollectionModal = ({ isOpen, onClose, equipment }) => {
 
   function handleNumberOfDaysInput(value) {
     setNumberOfDays(value);
+    // Calculate future drop-off date
     const today = new Date();
     const futureDate = new Date(today);
     futureDate.setDate(today.getDate() + parseInt(value));
     const day = String(futureDate.getDate());
     const month = String(futureDate.getMonth() + 1);
     const year = futureDate.getFullYear();
-    const formattedFutureDate = `${day}/${month}/${year}`;
-    setDropOffDate(formattedFutureDate);
+    setDropOffDate(`${day}/${month}/${year}`);
   }
 
-  function handleCheckout() {
-    if (equipment.Price * numberOfDays === 0) {
-      setErrorMessage("Please set number days greater than 0");
+  async function handleCheckout() {
+    if (!pickupDate) {
+      setErrorMessage("Please select a pickup date.");
       setErrorOpen(true);
+    } else if (numberOfDays <= 0) {
+      setErrorMessage("Please set number of days greater than 0");
+      setErrorOpen(true);
+    } else if (currentUser.uid === equipment.Owner) {
+      setErrorMessage("You cannot book your own equipment.");
+      setErrorOpen(true);
+    } else {
+      // Proceed to checkout logic here
+      setLoading(true); // Set loading to true
+      try {
+        await bookEquipment(
+          currentUser.uid,
+          equipment.EquipmentId,
+          pickupDate,
+          dropOffDate
+        );
+        console.log("Booking successful...");
+        onClose(); // Close modal after processing
+      } catch (error) {
+        setErrorMessage("There was an error processing your booking.");
+        setErrorOpen(true);
+      } finally {
+        setLoading(false); // Reset loading state
+      }
     }
   }
 
   if (!isOpen) return null;
+
+  // Calculate max date (7 days from today)
+  const today = new Date();
+  const maxDate = new Date();
+  maxDate.setDate(today.getDate() + 7);
 
   return (
     <div className="OurCollectionModalOverlay">
@@ -93,6 +138,8 @@ const OurCollectionModal = ({ isOpen, onClose, equipment }) => {
                   id="pickup-date"
                   value={pickupDate}
                   onChange={(e) => setPickupDate(e.target.value)}
+                  min={today.toISOString().split("T")[0]} // Set min to today
+                  max={maxDate.toISOString().split("T")[0]} // Set max to 7 days
                 />
               </div>
               <div className="OurCollectionModalNumberOfDaysContainer">
@@ -120,8 +167,9 @@ const OurCollectionModal = ({ isOpen, onClose, equipment }) => {
                   disableFocusRipple
                   disableRipple
                   onClick={handleCheckout}
+                  disabled={loading} // Disable button while loading
                 >
-                  Proceed to Checkout
+                  {loading ? "Processing..." : "Proceed to Checkout"}
                 </StyledButton>
               </div>
             </div>

@@ -77,3 +77,14 @@
   font-size: var(--text-small);
   gap: 20px;
 }
+
+@media screen and (max-width: 1000px) {
+  .CropManagementGrowthTBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .CropManagementGrowthTBoxName {
+    flex: 1;
+  }
+}

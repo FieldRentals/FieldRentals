@@ -23,11 +23,20 @@
   display: flex;
   gap: 20px;
 }
-.FooterLinkText{
+.FooterLinkText {
   text-decoration: none;
   color: var(--primary-white);
 }
-.FooterContainerIcons a{
+.FooterContainerIcons a {
   text-decoration: none;
   color: var(--primary-white);
+}
+
+@media screen and (max-width: 1000px) {
+  .FooterContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
 }

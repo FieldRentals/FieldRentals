@@ -29,6 +29,8 @@ export default function PersonalInformation() {
     city: "",
   });
 
+  const [loading, setLoading] = useState(false); // New loading state
+
   useEffect(() => {
     // Fetch user data when currentUser.uid changes
     if (currentUser?.uid) {
@@ -74,6 +76,24 @@ export default function PersonalInformation() {
     phoneNumber !== initialValues.phoneNumber ||
     state !== initialValues.state ||
     city !== initialValues.city;
+
+  const handleSave = async () => {
+    setLoading(true); // Set loading to true when saving
+    try {
+      await updateUserData(currentUser?.uid, {
+        firstName: firstName,
+        lastName: lastName,
+        phoneNumber: phoneNumber,
+        email: email,
+        state: state,
+        city: city,
+      });
+    } catch (error) {
+      console.error("Failed to update user data:", error);
+    } finally {
+      setLoading(false); // Reset loading state after saving
+    }
+  };
 
   return (
     <div className="PersonalInformationContainer">
@@ -156,18 +176,10 @@ export default function PersonalInformation() {
             disableElevation
             disableFocusRipple
             disableRipple
-            onClick={() =>
-              updateUserData(currentUser?.uid, {
-                firstName: firstName,
-                lastName: lastName,
-                phoneNumber: phoneNumber,
-                email: email,
-                state: state,
-                city: city,
-              })
-            }
+            onClick={handleSave}
+            disabled={loading} // Disable button if loading
           >
-            Save
+            {loading ? "Saving..." : "Save"} {/* Change button text */}
           </StyledButton>
         </div>
       )}

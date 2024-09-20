@@ -41,3 +41,22 @@
   align-items: center;
   /* cursor: pointer; */
 }
+
+@media screen and (max-width: 1000px) {
+  .NavBarContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .NavBarButtonContainer {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    gap: 0px;
+  }
+
+  .NavBarLinks {
+    gap: 15px;
+  }
+}

@@ -3,6 +3,10 @@ import "./Profile.css";
 import { signOutUser } from "../../Firebase/authFunction";
 import { useAuth } from "../../AuthContext";
 import PersonalInformation from "./PersonalInformation/PersonalInformation";
+import SupportandHelp from "./SupportandHelp/SupportandHelp";
+import AccountSettings from "./AccountSettings/AccountSettings";
+import EquipmentInventory from "./EquipmentInventory/EquipmentInventory";
+import RentalHistory from "./RentalHistory/RentalHistory";
 
 export default function Profile({ setShowProfile }) {
   const { currentUser, loading } = useAuth();
@@ -31,28 +35,10 @@ export default function Profile({ setShowProfile }) {
             Rental History
           </button>
           <button
-            className={mainContent === "Payment Information" ? "active" : null}
-            onClick={() => setMainContent("Payment Information")}
-          >
-            Payment Information
-          </button>
-          <button
             className={mainContent === "Equipment Inventory" ? "active" : null}
             onClick={() => setMainContent("Equipment Inventory")}
           >
             Equipment Inventory
-          </button>
-          <button
-            className={mainContent === "Review and Ratings" ? "active" : null}
-            onClick={() => setMainContent("Review and Ratings")}
-          >
-            Review and Ratings
-          </button>
-          <button
-            className={mainContent === "Account Settings" ? "active" : null}
-            onClick={() => setMainContent("Account Settings")}
-          >
-            Account Settings
           </button>
           <button
             className={mainContent === "Support and Help" ? "active" : null}
@@ -61,10 +47,10 @@ export default function Profile({ setShowProfile }) {
             Support and Help
           </button>
           <button
-            className={mainContent === "Logout" ? "active" : null}
-            onClick={() => setMainContent("Logout")}
+            className={mainContent === "Account Settings" ? "active" : null}
+            onClick={() => setMainContent("Account Settings")}
           >
-            Logout
+            Account Settings
           </button>
         </div>
         <div className="ProfileSubConatinerMainInfo">
@@ -72,15 +58,23 @@ export default function Profile({ setShowProfile }) {
           {mainContent === "Personal Information" ? (
             <PersonalInformation />
           ) : null}
-          {mainContent === "Logout" ? (
-            <button
-              onClick={() => {
-                signOutUser();
-                setShowProfile(false);
-              }}
-            >
-              Sign Out
-            </button>
+          {mainContent === "Account Settings" ? (
+            <AccountSettings setShowProfile={setShowProfile} />
+          ) : null}
+          {mainContent === "Support and Help" ? (
+            <>
+              <SupportandHelp />
+            </>
+          ) : null}
+          {mainContent === "Equipment Inventory" ? (
+            <>
+              <EquipmentInventory />
+            </>
+          ) : null}
+          {mainContent === "Rental History" ? (
+            <>
+              <RentalHistory />
+            </>
           ) : null}
         </div>
       </div>

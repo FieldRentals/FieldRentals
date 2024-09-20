@@ -20,6 +20,18 @@
   width: fit-content;
 }
 
+@media screen and (max-width: 1000px) {
+  .HSTitle {
+    font-size: var(--text-big);
+    font-weight: var(--text-bold);
+  }
+
+  .HSSubtitle {
+    font-size: var(--text-medium);
+    font-weight: var(--text-regular);
+  }
+}
+
 /* .OurCollection {
   position: relative;
   height: 1000px;

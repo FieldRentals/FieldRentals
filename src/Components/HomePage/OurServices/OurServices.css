@@ -41,3 +41,15 @@
   font-size: var(--text-medium);
   font-weight: var(--text-bold);
 }
+
+@media screen and (max-width: 1000px) {
+  .OurServices {
+    align-items: flex-start;
+    padding: 40px;
+  }
+
+  .OurServicesRow {
+    display: flex;
+    flex-direction: column;
+  }
+}

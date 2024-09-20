@@ -6,6 +6,8 @@ import OurCollection from "./OurCollection/OurCollection";
 import { StyledButton } from "../../App";
 import AddEuipment from "./AddEuipment/AddEquipment";
 import "./Dashboard.css";
+import SoilAnalysis from "./SoilAnalysis/SoliAnalysis";
+import Footer from "../HomePage/Footer/Footer";
 
 export default function Dashboard() {
   const [addEquipment, setAddEquipment] = useState(false);
@@ -16,6 +18,8 @@ export default function Dashboard() {
       {addEquipment && <AddEuipment setAddEquipment={setAddEquipment} />}
       <Weather />
       <CropManagement />
+      <SoilAnalysis />
+      <Footer />
       {/* <div className="DashboardButtonContainer">
         <div className="DashboardButtonSubContainer">
           <div>

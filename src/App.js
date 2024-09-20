@@ -17,9 +17,10 @@ import Dashboard from "./Components/DashBoard/Dashboard";
 // import TermsPage from "../../testing/src/TermsPage";
 import Terms from "./Components/HomePage/Footer/AllLinks/Terms";
 import PrivacyPolicy from "./Components/HomePage/Footer/AllLinks/PrivacyPolicy";
-import LN from "./Components/HomePage/Footer/AllLinks/LN";
+import LN from "./Components/HomePage/Footer/AllLinks/LegalNotice";
 import Accesibility from "./Components/HomePage/Footer/AllLinks/Accesibility";
 import HomePageAfterLogIn from "./Components/HomePageAfterLogIn/HomePageAfterLogIn";
+import Loading from "./Components/Loading/Loading";
 
 export const StyledButton = styled(Button)(() => ({
   textTransform: "none",
@@ -53,7 +54,7 @@ function PrivateRouteWithSignIn({ children }) {
   const { currentUser, loading } = useAuth();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return currentUser ? children : <Navigate to="/login-or-register" />;
@@ -63,7 +64,7 @@ function PrivateRouteWithoutSignIn({ children }) {
   const { currentUser, loading } = useAuth();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return currentUser ? <Navigate to="/" /> : children;
@@ -73,7 +74,7 @@ function HomePagePath() {
   const { currentUser, loading } = useAuth();
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return currentUser ? <HomePageAfterLogIn /> : <HomePage />;
@@ -103,7 +104,7 @@ function App() {
           />
           <Route path="/terms" element={<Terms />} />
           <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-          <Route path="/LN" element={<LN />} />
+          <Route path="/LegalNotice" element={<LN />} />
           <Route path="/Accesibility" element={<Accesibility />} />
         </Routes>
       </BrowserRouter>
