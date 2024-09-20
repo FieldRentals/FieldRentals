@@ -14,6 +14,7 @@ import {
 } from "firebase/firestore";
 import { db } from "./firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import emailjs from 'emailjs-com';
 
 export async function createInitalUser(user) {
   const userProfile = {
@@ -166,6 +167,7 @@ export async function bookEquipment(
 ) {
   const equipmentDocRef = doc(db, "equipments", equipmentId);
   const rentalHistoryDocRef = doc(db, "rentalHistory", userUid);
+  const userDocRef = doc(db, "users", userUid); // Reference to the user document
 
   try {
     // Check if rental history document exists
@@ -195,6 +197,61 @@ export async function bookEquipment(
       });
     }
 
+    // Fetch equipment data for the email
+    const equipmentDoc = await getDoc(equipmentDocRef);
+    const equipmentData = equipmentDoc.data();
+
+    // Fetch user email
+    const userDoc = await getDoc(userDocRef);
+    const userEmail = userDoc.exists() ? userDoc.data().email : 'no-reply@example.com';
+
+    // Prepare email parameters for user
+    const userTemplateParams = {
+      user_email: userEmail,
+      equipment_name: equipmentData.Name,
+      booking_date: new Date().toLocaleDateString(),
+      pickup_time: pickupDate,
+      return_time: dropOffDate,
+      pickup_location: equipmentData.Location,
+      total_cost: equipmentData.Price,
+      payment_status: 'Paid',
+      contact_info: 'fieldrental69@gmail.com',
+    };
+
+    // Send email to the user
+    await emailjs.send('service_gyhas1f', 'template_e9pegzo', userTemplateParams, 'pgORs-nYtW_zTwaq0')
+      .then((result) => {
+        console.log('Email sent to user successfully:', result.text);
+      }, (error) => {
+        console.error('Error sending email to user:', error.text);
+      });
+
+    // Fetch owner UID from the equipment data
+    const ownerUid = equipmentData.Owner; // Assuming this is the UID of the owner
+
+    // Fetch owner's email using the owner UID
+    const ownerDocRef = doc(db, "users", ownerUid);
+    const ownerDoc = await getDoc(ownerDocRef);
+    const ownerEmail = ownerDoc.exists() ? ownerDoc.data().email : 'no-reply@example.com';
+
+    // Prepare email parameters for owner
+    const ownerTemplateParams = {
+      owner_email: ownerEmail,
+      equipment_name: equipmentData.Name,
+      user_email: userEmail,
+      pickup_time: pickupDate,
+      return_time: dropOffDate,
+      pickup_location: equipmentData.Location,
+    };
+
+    // Send email to the owner
+    await emailjs.send('service_gyhas1f', 'template_3op0ihx', ownerTemplateParams, 'pgORs-nYtW_zTwaq0')
+      .then((result) => {
+        console.log('Email sent to owner successfully:', result.text);
+      }, (error) => {
+        console.error('Error sending email to owner:', error.text);
+      });
+
     // Update equipment status
     await updateDoc(equipmentDocRef, {
       Status: "Not Available",
@@ -207,6 +264,7 @@ export async function bookEquipment(
     throw error; // Propagate error
   }
 }
+
 
 // In your Firebase functions file
 
